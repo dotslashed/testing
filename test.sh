@@ -167,10 +167,26 @@ cat jsurls.txt | while read urls do; do python3 SecretFinder.py -i $urls -o cli 
 
 cd ../
 
+cd ../
+
+zip -r recon.zip testing
 
 sleep 3
 
 echo "[+] Phewwww! Done..."
 
+echo "==========================FILE HOSTING SERVER USE WGET=================================="
 
+
+wget "https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.tgz"
+
+
+tar -xvzf ngrok-stable-linux-amd64.tgz
+
+mv ngrok /usr/local/bin
+
+
+ngrok http 4747
+
+echo "Use python server to host file"
 
